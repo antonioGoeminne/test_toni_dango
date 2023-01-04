@@ -1,12 +1,13 @@
 import { useState } from 'react'
+import CardsWrapper from './componentes/homeCards/CardsWrapper'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
-      pepe { count }
-    </div>
+    <main>
+      <CardsWrapper />
+    </main>
   )
 }
 
