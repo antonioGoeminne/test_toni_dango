@@ -34,7 +34,13 @@ export const Card = ({ updateDataCards, data }) => {
             }
             <span class='flex'>
                 <p class='font-bold text-[11px]'>${Number(price).toFixed(2)}</p>
-                <input onChange={(e) => { updateDataCards(id, Number(e.target.value)); setQuantity(Number(e.target.value)) }} value={quantity} pattern='[*9]' type='numeric' class={'focus:outline-gray-200 ml-2 h-4 w-6 border text-[8px] text-center text-gray-500 '} placeholder='1' />
+                <input
+                    onChange={(e) => {
+                        e.target.value >= 0 ? updateDataCards(id, Number(e.target.value))
+                            : null;
+                        e.target.value >= 0 ? setQuantity(Number(e.target.value))
+                            : null
+                    }} value={quantity} class={'focus:outline-gray-200 ml-2 h-4 w-6 border text-[8px] text-center text-gray-500 '} placeholder='1' />
             </span>
             <div class='mt-1 mb-3 max-w-[120px]'>
                 <p class='leading-3 text-[9px] text-slate-500'>
