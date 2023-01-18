@@ -16,7 +16,7 @@ export default function CardsWrapper() {
 
     return (
         <>
-            <div class="flex justify-center min-[616px]:justify-start flex-wrap mt-20 m-auto max-w-[700px]">
+            <div class='grid max-w-[1440px] justify-center mx-auto  mt-8 gap-y-3 gap-x-2 grid-cols-fluid'>
                 {dataCards?.sort((a, b) => a.id - b.id).map(dataCard => <Card updateDataCards={updateDataCards} key={dataCard.id} data={dataCard} />)}
             </div>
             <span class='flex justify-center'>

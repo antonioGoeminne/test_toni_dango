@@ -19,15 +19,15 @@ export const Card = ({ updateDataCards, data }) => {
 
 
     return (
-        <div class='flex p-4 max-w-[145px] ml-2 px-3 mb-4 border-black border-2 m-0 align-middle flex-col justify-center'>
+        <div class='flex  p-4 max-w-[145px] px-3 min-h-[338px] border-black border-2 m-0 align-middle flex-col justify-center'>
             <span class='flex justify-center'>
                 <img class='rounded-xl pt-1' alt='Windmill' width={120} src={windMill} />
             </span>
             {!editTitle
-                ? <h3 onClick={() => changeTitle(true)} class={`font-bold cursor-pointer mt-[15px] mb-5 text-[${fontTitleSize}px] text-left hover:underline`}>{newTitle}</h3>
+                ? <h3 onClick={() => changeTitle(true)} class={`font-bold overflow-hidden cursor-pointer max-h-[55px] mt-[15px] mb-5 text-[${fontTitleSize}px] text-left hover:underline`}>{newTitle}</h3>
                 :
                 <>
-                    <textarea class={` resize-none font-bold mt-3 mb-5 text-[${fontTitleSize}px] text-left`} onChange={handleNewTitle} value={newTitle} />
+                    <textarea autoFocus class={` resize-none font-bold mt-3 mb-5 text-[${fontTitleSize}px] h-[55px] text-left`} onChange={handleNewTitle} value={newTitle} />
                     <input onChange={changeValue} value={fontTitleSize} min="11" max="15" type='range' class="w-full h-3 mb-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" />
                     <button class={`m-2 border rounded-sm ${!newTitle.length ? 'bg-gray-200' : 'hover:bg-gray-100'} ${!newTitle.length ? 'bg-gray-200' : 'bg-white'}`} disabled={!newTitle.length} onClick={() => changeTitle(false)}>Guardar</button>
                 </>
